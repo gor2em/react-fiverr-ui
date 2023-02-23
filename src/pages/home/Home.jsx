@@ -6,7 +6,8 @@ import CatCard from "../../components/catCard/CatCard";
 
 import "./Home.scss";
 
-import { cards } from "../../data";
+import { cards, projects } from "../../data";
+import ProjectCard from "../../components/projectCard/ProjectCard";
 
 const Home = () => {
   return (
@@ -101,6 +102,12 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      <Slide slidesToShow={4} arrowsScroll={4}>
+        {projects.map((project) => (
+          <ProjectCard key={project.id} item={project} />
+        ))}
+      </Slide>
     </div>
   );
 };
